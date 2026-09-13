@@ -4,37 +4,14 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="CloudTasks, gestor de tareas personales y de equipo.">
-  <link rel="stylesheet" href="styless.css">
+  <link rel="stylesheet" href="css/styless.css">
   <title>CloudTasks | Mis tareas</title>
 </head>
 <body>
   <header class="site-header">
     <a class="brand" href="#inicio" aria-label="CloudTasks, inicio"><span class="brand-mark" aria-hidden="true">✓</span><span>CloudTasks</span></a>
     <p class="header-message">Organiza lo importante, un día a la vez.</p>
-    <button id="sign-out-button" class="profile-button" type="button" aria-label="Cerrar sesión" hidden>Salir</button>
   </header>
-  <main id="auth-panel" class="auth-panel" aria-labelledby="auth-title" hidden>
-    <section class="auth-card">
-      <p class="eyebrow">CLOUDTASKS</p>
-      <h1 id="auth-title">Organiza tu día</h1>
-      <p class="auth-intro">Inicia sesión para ver y gestionar tus tareas.</p>
-      <div class="auth-tabs" role="tablist" aria-label="Acceso a la cuenta">
-        <button id="login-tab" class="auth-tab active" type="button" role="tab" aria-selected="true">Iniciar sesión</button>
-        <button id="signup-tab" class="auth-tab" type="button" role="tab" aria-selected="false">Crear cuenta</button>
-      </div>
-      <form id="login-form" class="auth-form">
-        <div class="field"><label for="login-email">Correo electrónico</label><input id="login-email" type="email" autocomplete="email" required></div>
-        <div class="field"><label for="login-password">Contraseña</label><input id="login-password" type="password" autocomplete="current-password" required></div>
-        <button class="primary-button" type="submit">Iniciar sesión <span aria-hidden="true">→</span></button>
-      </form>
-      <form id="signup-form" class="auth-form" hidden>
-        <div class="field"><label for="signup-email">Correo electrónico</label><input id="signup-email" type="email" autocomplete="email" required></div>
-        <div class="field"><label for="signup-password">Contraseña</label><input id="signup-password" type="password" minlength="6" autocomplete="new-password" required></div>
-        <button class="primary-button" type="submit">Crear cuenta <span aria-hidden="true">→</span></button>
-      </form>
-      <p id="auth-status" class="auth-status" role="status" aria-live="polite"></p>
-    </section>
-  </main>
   <main id="inicio" class="app-shell">
     <section class="intro" aria-labelledby="page-title">
       <div><p class="eyebrow">PANEL PERSONAL</p><h1 id="page-title">Mis tareas</h1><p class="intro-text">Mantén tus pendientes claros y avanza con foco.</p></div>
@@ -81,8 +58,6 @@
             </div>
           </div>
         </div>
-        <!-- CAMBIO: se vacía el <ul>, ya no trae tareas escritas a mano.
-             Ahora todo su contenido lo genera renderTasks() en app.js -->
         <ul id="task-list" class="task-list">
         </ul>
       </section>
@@ -90,6 +65,7 @@
   </main>
   <footer class="site-footer">CloudTasks · Gestión de tareas simple y clara</footer>
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-  <script src="js/app.js"></script>
+  <script src="js/config.js"></script>
+  <script src="js/logica.js"></script>
 </body>
 </html>
